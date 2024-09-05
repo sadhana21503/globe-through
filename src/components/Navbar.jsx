@@ -27,37 +27,36 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="sm:hidden flex items-center">
-        <FiMenu className="text-gray-100 text-3xl" onClick={toggleMenu} />
+        <FiMenu className="text-gray-100 text-3xl cursor-pointer" onClick={toggleMenu} />
       </div>
       {isOpen && (
-        <div className="fixed top-20 right-0.5 bg-teal-500 shadow-lg rounded-lg p-4 w-full ">
-          <Link
-            to="/aboutus"
-            className="block text-gray-100 font-urbanist hover:underline py-2 border-b border-white"
-            onClick={toggleMenu}
-          >
-            Our Story
-          </Link>
-          <Link
-            to="/joinus"
-            className="block text-gray-100 font-urbanist hover:underline py-2 border-b border-white"
-            onClick={toggleMenu}
-          >
-            Team Up
-          </Link>
-          <div className="flex flex-col space-y-4">
-            <div className="border-white"></div>
-            <div className="flex space-x-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-teal-500">
-                <FaInstagram className="text-xl" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-teal-500">
-                <FaTwitter className="text-xl" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-teal-500">
-                <FaLinkedin className="text-xl" />
-              </a>
-            </div>
+        <div className="absolute top-20 left-0 right-0 bg-teal-500 shadow-lg rounded-lg p-4 flex flex-col space-y-4 z-20">
+          <div className="flex flex-col items-start">
+            <Link
+              to="/aboutus"
+              className="block text-gray-100 font-urbanist hover:underline py-2 border-b border-white w-full"
+              onClick={toggleMenu}
+            >
+              Our Story
+            </Link>
+            <Link
+              to="/joinus"
+              className="block text-gray-100 font-urbanist hover:underline py-2 border-b border-white w-full"
+              onClick={toggleMenu}
+            >
+              Team Up
+            </Link>
+          </div>
+          <div className="flex justify-start space-x-4">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-teal-300">
+              <FaInstagram className="text-xl" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-teal-300">
+              <FaTwitter className="text-xl" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-teal-300">
+              <FaLinkedin className="text-xl" />
+            </a>
           </div>
         </div>
       )}
